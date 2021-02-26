@@ -12,6 +12,7 @@ AllCops:
     - "Gemfile"
     - "Rakefile"
     - "config.ru"
+    - "node_modules/**/*"
   NewCops: enable
 
 Style/Documentation:
