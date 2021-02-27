@@ -1,20 +1,22 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe ProblemsController, type: :request do
-   subject do
+  subject do
     post problems_path(params)
     response
-   end 
+  end
 
-   it 'returns success' do
+  it 'returns success' do
     expect(subject).to have_http_status(:success)
-   end
+  end
 
-   let :params do
+  let :params do
     {
-        title: "hoge",
-        level: 0,
-        date: Time.zone.now
+      title: 'hoge',
+      level: Enums::Level::A,
+      date: Time.zone.now
     }
-   end
+  end
 end
