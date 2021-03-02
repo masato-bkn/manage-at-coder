@@ -12,7 +12,8 @@ RSpec.describe ProblemsController, type: :request do
     {
       title: 'hoge',
       level: Enums::Level::A,
-      date: Time.zone.now
+      date: Time.zone.now,
+      categories: %w[整数 パリティ]
     }
   end
 
@@ -27,8 +28,10 @@ RSpec.describe ProblemsController, type: :request do
   it 'パラメタで指定した値でproblemが作成されること' do
     subject
     problem = Problem.first
+
     expect(problem.title).to eq(params[:title])
     expect(problem.level).to eq(params[:level])
     expect(problem.date).to eq(params[:date].rfc3339)
+    expect(problem.categories.map(&:value)).to eq(params[:categories])
   end
 end
