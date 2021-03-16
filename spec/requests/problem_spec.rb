@@ -32,6 +32,6 @@ RSpec.describe ProblemsController, type: :request do
     expect(problem.title).to eq(params[:title])
     expect(problem.level).to eq(params[:level])
     expect(problem.date).to eq(params[:date].rfc3339)
-    expect(problem.categories.map(&:value)).to eq(params[:categories])
+    expect(problem.categories.map(&:name)).to eq(params[:categories])
   end
 end

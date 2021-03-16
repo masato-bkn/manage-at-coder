@@ -2,6 +2,6 @@
 
 FactoryBot.define do
   factory :category do
-    value { Enums::Level::A }
+    name { Enums::Level::A }
   end
 end

@@ -19,7 +19,7 @@ class ProblemsController < ApplicationController
 
   def create_category
     params[:categories].map do |category|
-      Category.find_or_create_by!(value: category)
+      Category.find_or_create_by!(name: category)
     end
   end
 

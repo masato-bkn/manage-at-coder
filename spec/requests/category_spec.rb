@@ -10,7 +10,7 @@ RSpec.describe ProblemsController, type: :request do
 
   let :params do
     {
-      value: '整数'
+      name: '整数'
     }
   end
 

@@ -8,6 +8,6 @@ class CategorysController < ApplicationController
   private
 
   def category_params
-    params.permit(:value)
+    params.permit(:name)
   end
 end
